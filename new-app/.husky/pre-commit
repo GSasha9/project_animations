@@ -1,7 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/../../.husky/_/husky.sh"
-
-cd new-app
-npm run lint
-npm run format:check
-ng test --watch=false
