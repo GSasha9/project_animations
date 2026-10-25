@@ -7,7 +7,7 @@
     "build": "ng build",
     "prepare": "husky",
     "lint": "eslint --ext .ts,.html src",
-    "lint:fix": "eslint --ext .ts,.html src --fix",
+    "lint:fix": "npm run format:fix && eslint --ext .ts,.html src --fix",
     "format:check": "prettier --check \"src/**/*.{ts,html,scss}\"",
     "format:fix": "prettier --write \"src/**/*.{ts,html,scss}\"",
     "watch": "ng build --watch --configuration development",

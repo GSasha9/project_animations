@@ -13,10 +13,19 @@ describe('Header', () => {
 
     fixture = TestBed.createComponent(Header);
     component = fixture.componentInstance;
+    fixture.detectChanges();
     await fixture.whenStable();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render logo and navigation links', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.querySelector('.logo')?.textContent).toContain('Bakery');
+    expect(compiled.querySelectorAll('nav a').length).toBe(4);
+    expect(compiled.querySelector('nav a')?.textContent).toContain('Home');
   });
 });

@@ -6,4 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {}
+export class Header {
+  isMenuOpen = false;
+
+  openMenu(): void {
+    this.isMenuOpen = true;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
+}

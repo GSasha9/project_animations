@@ -1,4 +1,4 @@
-@use './styles/reset.scss';
+@use './styles/reset';
 @use './styles/_colors.scss' as *;
 @use './styles/_typography.scss' as *;
 
@@ -8,12 +8,12 @@ body {
 }
 
 .app-btn {
-    background-color: $color-btn-primary;
-    border: 1px $color-btn-primary-hover solid;
+  background-color: $color-btn-primary;
+  border: 1px $color-btn-primary-hover solid;
 
-    &:hover {
-        background-color: $color-btn-primary-hover;
-        border: 1px $color-btn-primary solid;
-        color: $color-btn-primary;
-    }
+  &:hover {
+    background-color: $color-btn-primary-hover;
+    border: 1px $color-btn-primary solid;
+    color: $color-btn-primary;
+  }
 }
