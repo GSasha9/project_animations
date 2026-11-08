@@ -1,0 +1,52 @@
+<header class="topbar" aria-label="Main header">
+  <a href="/" class="logo-link" aria-label="Go to home page">
+    <h1 class="logo">Bakery</h1>
+  </a>
+
+  <nav class="main-nav" id="main-navigation" [class.is-open]="isMenuOpen">
+    <div class="nav-header">
+      <span>Menu</span>
+      <button
+        type="button"
+        class="close-menu"
+        aria-label="Close navigation menu"
+        (click)="closeMenu()"
+      >
+        &times;
+      </button>
+    </div>
+
+    <ul class="menu-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Sellers</a></li>
+      <li><a href="#">Articles</a></li>
+      <li><a href="#">Customers</a></li>
+      <li class="menu-login-item">
+        <button class="btn btn-primary app-btn" type="button">
+          <i class="bi bi-box-arrow-in-right"></i>
+          Login
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <button
+    type="button"
+    class="menu-toggle"
+    aria-label="Toggle navigation menu"
+    [attr.aria-expanded]="isMenuOpen"
+    aria-controls="main-navigation"
+    (click)="openMenu()"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<div
+  class="mobile-menu-overlay"
+  [class.is-visible]="isMenuOpen"
+  (click)="closeMenu()"
+  aria-hidden="true"
+></div>

@@ -1,0 +1,205 @@
+@use '../../../styles/colors' as *;
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 0 0 2rem 2rem;
+  position: relative;
+  box-shadow: 0 0.5rem 1.2rem $color-shadow;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: $color-shadow;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.menu-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.menu-list a {
+  color: $color-shadow;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.menu-list a:hover {
+  opacity: 0.7;
+  color: $color-btn-primary;
+}
+
+.app-btn {
+  white-space: nowrap;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.45rem;
+  margin-left: 1rem;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background-color: $color-shadow;
+}
+
+.nav-header {
+  display: none;
+}
+
+.close-menu {
+  display: none;
+}
+
+.mobile-menu-overlay {
+  display: none;
+}
+
+.mobile-menu-overlay.is-visible {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    position: relative;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+
+  .logo {
+    font-size: 2rem;
+    z-index: 2;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(18rem, 85vw);
+    height: 100vh;
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: all 0.25s ease;
+    background-color: white;
+    box-shadow: -0.5rem 0 1.5rem rgba(0, 0, 0, 0.12);
+    margin-left: 0;
+    padding: 1rem 1.25rem 1rem 2rem;
+    z-index: 10;
+  }
+
+  .main-nav.is-open {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+
+  .nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: $color-shadow;
+  }
+
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+    height: 85%;
+  }
+
+  .menu-login-item {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .menu-login-item .app-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+    z-index: 2;
+  }
+
+  .close-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    background: transparent;
+    color: $color-shadow;
+    font-size: 2.2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 9;
+  }
+
+  .mobile-menu-overlay.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    display: block;
+  }
+}
