@@ -1,3 +1,4 @@
+
 name: Deploy Angular to GitHub Pages
 
 on:
@@ -28,11 +29,14 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: new-app/package-lock.json
 
       - name: Install dependencies
+        working-directory: ./new-app
         run: npm ci
 
       - name: Build Angular
+        working-directory: ./new-app
         run: npm run build -- --configuration production --base-href "/${{ github.event.repository.name }}/"
 
       - name: Configure Pages
@@ -41,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: dist/new-app/browser
+          path: new-app/dist/new-app/browser
 
       - name: Deploy
         id: deployment
