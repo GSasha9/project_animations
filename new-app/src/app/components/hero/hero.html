@@ -1,0 +1,41 @@
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-main">
+    <div class="hero-content">
+      <h1 class="hero-title" id="hero-title">Sweet moments, freshly baked with love</h1>
+      <p class="hero-description">
+        Customized cakes, treats and every thing sweet for all your special moments.
+      </p>
+
+      <button class="hero-cta" type="button">Shop Now</button>
+
+      <ul class="social-links" aria-label="Social media">
+        <li>
+          <span class="social-icon-placeholder" aria-hidden="true"
+            ><img src="/images/facebook.png" alt=""
+          /></span>
+        </li>
+        <li>
+          <span class="social-icon-placeholder" aria-hidden="true"
+            ><img src="/images/instagram.png" alt=""
+          /></span>
+        </li>
+        <li>
+          <span class="social-icon-placeholder" aria-hidden="true"
+            ><img src="/images/linkedin.png" alt=""
+          /></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="hero-art" aria-hidden="true" [style.--shadow-expansion]="shadowExpansion + '%'">
+      <div class="hero-donuts" [style.--scroll-rotation]="scrollRotation + 'deg'"></div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</section>
